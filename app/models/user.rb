@@ -6,4 +6,6 @@ class User < ApplicationRecord
          :confirmable
 
 validates :first_name, presence: true
+
+mount_uploader :avatar, AvatarUploader
 end
