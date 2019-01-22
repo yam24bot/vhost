@@ -1,5 +1,8 @@
 <%= @user.first_name %>
 
-<%= image_tag @user.avatar.url(:thumb) if @user.avatar? %>
-
+<br>
+<%= avatar_for(@user) %>
+<br>
 <%= link_to "Edit", edit_user_path(@user) %>
+<br>
+<%= link_to "Edit user information", edit_user_registration_path%>
