@@ -1,7 +1,9 @@
-<%= @user.first_name %>
+<%= "#{@user.last_name} #{@user.first_name}" %>
 
 <br>
 <%= avatar_for(@user) %>
+<br>
+<%= @user.email %>
 <br>
 <%= link_to "Edit", edit_user_path(@user) %>
 <br>
