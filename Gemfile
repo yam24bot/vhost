@@ -8,6 +8,7 @@ gem 'bootstrap'
 gem 'jquery-rails'
 gem 'carrierwave'
 gem 'mini_magick', '3.8.0'
+gem 'rails_admin'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.2'
