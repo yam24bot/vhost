@@ -10,6 +10,8 @@ gem 'carrierwave'
 gem 'mini_magick', '3.8.0'
 gem 'rails_admin'
 
+gem "letter_opener", :group => :development
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.2'
 # Use sqlite3 as the database for Active Record

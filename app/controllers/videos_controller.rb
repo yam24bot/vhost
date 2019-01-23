@@ -9,7 +9,7 @@ class VideosController  < ApplicationController
   private
 
   def check_if_banned
-    if current_user
+    if current_user && current_user.banned?
       # @user = User.find(params[:id])
       user_id = current_user.id
       if User.find(user_id)
