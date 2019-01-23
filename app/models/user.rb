@@ -5,6 +5,10 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable,
          :confirmable
 
+  def admin?
+    admin
+  end
+
 validates :first_name, presence: true
 
 mount_uploader :avatar, AvatarUploader
