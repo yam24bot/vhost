@@ -21,6 +21,17 @@ class UsersController < ApplicationController
     end
   end
 
+  def update_ban_status
+    @user = User.find(params[:id])
+    if @user.banned
+      @user.update_attributes(banned: false)
+    else
+      @user.update_attributes(banned: true)
+      UserEmailMailer.update_ban_status_notify(@user.email).deliver
+    end
+
+  end
+
   private
 
   def check_autorization

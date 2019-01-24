@@ -4,7 +4,15 @@
 <%= avatar_for(@user) %>
 <br>
 <%= @user.email %>
+
+<% if current_user.id == @user.id %>
+  <br>
+  <%= link_to "Edit", edit_user_path(@user) %>
+  <br>
+  <%= link_to "Edit user information", edit_user_registration_path%>
+<% end %>
+
+<% if current_user.admin? %>
 <br>
-<%= link_to "Edit", edit_user_path(@user) %>
-<br>
-<%= link_to "Edit user information", edit_user_registration_path%>
+  <%= button_to "Block user", update_ban_status_user_path(@user.id), method: :put%>
+<% end %>
