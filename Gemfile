@@ -9,13 +9,21 @@ gem 'jquery-rails'
 gem 'carrierwave'
 gem 'mini_magick', '3.8.0'
 gem 'rails_admin'
+gem 'dotenv-rails'
 
+gem 'rails_12factor', group: :production
 gem "letter_opener", :group => :development
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.2'
-# Use sqlite3 as the database for Active Record
-gem 'sqlite3'
+group :production do
+  gem 'pg'
+end
+
+group :development, :test do
+  gem 'sqlite3'
+end# Use sqlite3 as the database for Active Record
+
 # Use Puma as the app server
 gem 'puma', '~> 3.11'
 # Use SCSS for stylesheets
