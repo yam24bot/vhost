@@ -14,5 +14,9 @@
 
 <% if current_user.admin? %>
 <br>
-  <%= button_to "Block user", update_ban_status_user_path(@user.id), method: :put%>
+ <% if @user.banned? %>
+ <%= button_to "Unblock user", update_ban_status_user_path(@user.id), method: :put, class:"btn btn-success"%>
+  <% else %>
+ <%= button_to "Block user", update_ban_status_user_path(@user.id), method: :put, class: "btn btn-danger"%>
+ <% end %>
 <% end %>

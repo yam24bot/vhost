@@ -25,11 +25,14 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     if @user.banned
       @user.update_attributes(banned: false)
+      flash.now[:alert] = "User is unbanned"
+      render :show
     else
       @user.update_attributes(banned: true)
+      flash.now[:alert] = "User is banned"
+      render :show
       UserEmailMailer.update_ban_status_notify(@user.email).deliver
     end
-
   end
 
   private
@@ -38,7 +41,6 @@ class UsersController < ApplicationController
     unless current_user.id == params[:id].to_i
       redirect_to root_url
     end
-
   end
 
   def set_user
