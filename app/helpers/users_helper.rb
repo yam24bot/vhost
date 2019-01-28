@@ -7,4 +7,8 @@ module UsersHelper
       image_tag "defaut_avatar.png", width: size, class: 'avatar-image'
     end
   end
+
+  def tags(user)
+    @tags = user.all_tags.split(' ')
+  end
 end

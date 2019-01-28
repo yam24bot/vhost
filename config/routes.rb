@@ -7,7 +7,6 @@ Rails.application.routes.draw do
   root to: 'videos#index'
 
   resources :videos
-  resources :users
   resources :banned
 
   # resource :users do

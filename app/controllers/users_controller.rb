@@ -2,14 +2,17 @@ class UsersController < ApplicationController
 
   before_action :authenticate_user!, only: [:edit, :update]
   before_action :check_autorization, only: [:edit, :update]
-  before_action :set_user
+  before_action :set_user, except: [:index]
+
+  def index
+    @users = User.all
+  end
 
   def show
-    @user = User.find(params[:id])
+    @tags = @user.all_tags.split(' ')
   end
 
   def edit
-
   end
 
   def update
@@ -22,7 +25,6 @@ class UsersController < ApplicationController
   end
 
   def update_ban_status
-    @user = User.find(params[:id])
     if @user.banned
       @user.update_attributes(banned: false)
       flash.now[:alert] = "User is unbanned"
@@ -48,7 +50,7 @@ class UsersController < ApplicationController
   end
 
   def user_params
-      params.require(:user).permit(:first_name, :last_name, :about, :avatar, :email)
+      params.require(:user).permit(:first_name, :last_name, :about, :avatar, :email, :all_tags)
   end
 
 end
