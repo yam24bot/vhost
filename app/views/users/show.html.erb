@@ -11,6 +11,13 @@
   <br>
   <%= link_to "Edit user information", edit_user_registration_path%>
 <% end %>
+<br>
+<h5>
+<% map = @user.all_tags.split(' ')%>
+<% map.each do |tag| %>
+    <span class="badge badge-pill badge-info"><%= tag %></span>
+<% end %>
+</h5>
 
 <% if current_user.admin? %>
 <br>
