@@ -9,11 +9,10 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user = User.find(params[:id])
+    @tags = @user.all_tags.split(' ')
   end
 
   def edit
-
   end
 
   def update
@@ -26,7 +25,6 @@ class UsersController < ApplicationController
   end
 
   def update_ban_status
-    @user = User.find(params[:id])
     if @user.banned
       @user.update_attributes(banned: false)
       flash.now[:alert] = "User is unbanned"

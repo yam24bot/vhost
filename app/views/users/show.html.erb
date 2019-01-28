@@ -1,10 +1,8 @@
 <%= "#{@user.last_name} #{@user.first_name}" %>
-
 <br>
 <%= avatar_for(@user) %>
 <br>
 <%= @user.email %>
-
 <% if current_user.id == @user.id %>
   <br>
   <%= link_to "Edit", edit_user_path(@user) %>
@@ -13,17 +11,15 @@
 <% end %>
 <br>
 <h5>
-<% map = @user.all_tags.split(' ')%>
-<% map.each do |tag| %>
+  <% @tags.each do |tag| %>
     <span class="badge badge-pill badge-info"><%= tag %></span>
-<% end %>
+  <% end %>
 </h5>
-
 <% if current_user.admin? %>
-<br>
- <% if @user.banned? %>
- <%= button_to "Unblock user", update_ban_status_user_path(@user.id), method: :put, class:"btn btn-success"%>
+  <br>
+  <% if @user.banned? %>
+    <%= button_to "Unblock user", update_ban_status_user_path(@user.id), method: :put, class:"btn btn-success"%>
   <% else %>
- <%= button_to "Block user", update_ban_status_user_path(@user.id), method: :put, class: "btn btn-danger"%>
- <% end %>
+    <%= button_to "Block user", update_ban_status_user_path(@user.id), method: :put, class: "btn btn-danger"%>
+  <% end %>
 <% end %>

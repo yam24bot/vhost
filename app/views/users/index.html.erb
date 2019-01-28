@@ -1,11 +1,10 @@
 <% @users.each do |user| %>
   <%= link_to user.email, user %>
-<br>
-<h5>
-  <% map = user.all_tags.split(' ')%>
-  <% map.each do |tag| %>
-      <span class="badge badge-pill badge-info"><%= tag %></span>
-  <% end %>
-</h5>
+  <br>
+  <h5>
+    <% tags(user).each do |tag| %>
+    <span class="badge badge-pill badge-info"><%= tag %></span>
+    <% end %>
+  </h5>
   <hr>
 <% end %>
