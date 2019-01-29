@@ -1,4 +1,6 @@
 function readURL(input) {
+  $("#avatar_for_user_edit").hide();
+  $("#change_avatar_for_user_edit").show();
   if (input.files && input.files[0]) {
     var reader = new FileReader();
 
