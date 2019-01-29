@@ -12,9 +12,9 @@
   <%= f.text_field :about_me %>
 
   <%= f.label :all_tags %>
-  <%= f.text_field :all_tags %>
+  <%= f.text_field :all_tags%>
 
-  <%= f.file_field :avatar, onchange: 'readURL(this)'%>
+  <%= f.file_field :avatar, onchange: "Validate(this)", class: 'file-upload'%>
   <div style = "display:none;" id = "change_avatar_for_user_edit"><img id="img_prev" alt="your image", class = "avatar-image"/></div>
   <div id = "avatar_for_user_edit" ><%= avatar_for(@user)%></div>
   <%= f.submit "Save Change" %>

@@ -11,6 +11,7 @@ gem 'mini_magick', '3.8.0'
 gem 'rails_admin'
 gem 'dotenv-rails'
 gem 'cloudinary'
+gem 'jquery-validation-rails'
 
 gem 'rails_12factor', group: :production
 gem "letter_opener", :group => :development
