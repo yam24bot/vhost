@@ -14,8 +14,9 @@
   <%= f.label :all_tags %>
   <%= f.text_field :all_tags %>
 
-  <%= f.file_field :avatar%>
-
+  <%= f.file_field :avatar, onchange: 'readURL(this)'%>
+  <div style = "display:none;" id = "change_avatar_for_user_edit"><img id="img_prev" alt="your image", class = "avatar-image"/></div>
+  <div id = "avatar_for_user_edit" ><%= avatar_for(@user)%></div>
   <%= f.submit "Save Change" %>
 
 <%end%>
