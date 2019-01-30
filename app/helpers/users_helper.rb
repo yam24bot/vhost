@@ -4,7 +4,7 @@ module UsersHelper
     if user.avatar?
       image_tag user.avatar.url(:thumb), width: size, height:size, class: 'avatar-image'
     else
-      image_tag "defaut_avatar.png", width: size, height:size, class: 'avatar-image'
+      cl_image_tag "Artboard_1.png" , width: size, height:size, class: 'avatar-image'
     end
   end
 

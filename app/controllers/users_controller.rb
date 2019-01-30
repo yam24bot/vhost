@@ -23,6 +23,10 @@ class UsersController < ApplicationController
       render :edit
     end
   end
+#TODO
+# 1. edit - > текущие скиллы с добавлением новых
+# 2. nested атрибуты
+# 3. bootstrap верстка
 
   def update_ban_status
     if @user.banned
