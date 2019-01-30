@@ -10,9 +10,9 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
-//= require jquery.validate.additional-methods
-//= require jquery.validate
 //= require jquery3
+//= require jquery.validate
+//= require jquery.validate.additional-methods
 //= require popper
 //= require bootstrap
 //= require rails-ujs
