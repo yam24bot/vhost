@@ -1,9 +1,9 @@
 development:
-  cloud_name: "videhost-herokuapp-com"
-  api_key: "878717484735146"
-  api_secret: "co3s3xyNY1VZ7CvdarZGehz5EXo"
+  cloud_name: ENV["CLOUDINARY_CLOUD_NAME"]
+  api_key: ENV["CLOUDINARY_API_KEY"]
+  api_secret: ENV["CLOUDINARY_API_SECRET"]
 
 production:
-  cloud_name: "videhost-herokuapp-com"
-  api_key: "878717484735146"
-  api_secret: "co3s3xyNY1VZ7CvdarZGehz5EXo"
+  cloud_name: ENV["CLOUDINARY_CLOUD_NAME"]
+  api_key: ENV["CLOUDINARY_API_KEY"]
+  api_secret: ENV["CLOUDINARY_API_SECRET"]
